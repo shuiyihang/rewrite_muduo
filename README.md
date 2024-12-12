@@ -25,3 +25,7 @@ readFd方法的设计，非常巧妙，在栈空间上开非常大的空间来�
 
 #### 4. EPollPoller和Poller
 这里是cpp多态的体现，通过newDefaultPoller得到具体实现的poll
+
+
+##### weak_ptr的使用
+参考modern effective C++ 

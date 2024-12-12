@@ -26,7 +26,7 @@ void Channel::tie(const std::shared_ptr<void> &obj) {
 
 void Channel::handleEvent(Timestamp recvTime) {
   if (m_tied) {
-    std::shared_ptr<void> obj = m_tie.lock();
+    std::shared_ptr<void> obj = m_tie.lock();// conn还没有被remove
     if (obj) {
       handleEventWithGuard(recvTime);
     }

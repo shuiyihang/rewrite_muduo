@@ -189,7 +189,7 @@ void TcpConnection::shutdownInLoop() {
 // 什么时间调用--accept channel 触发read事件之后，建立connection分发完成之后
 void TcpConnection::connectEstablished() {
   setState(ConnectState::kConnected);
-  m_channel->tie(shared_from_this());
+  m_channel->tie(shared_from_this());// 绑定了一个连接，这个连接存放到server map[str,conn]
   m_channel->enableReading();
 
   // 执行新连接建立回调
